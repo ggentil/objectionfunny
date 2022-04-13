@@ -3,6 +3,7 @@ dotenv.config();
 
 import express from 'express';
 import profileRoutes from './src/routes/profile';
+import userRoutes from './src/routes/user';
 import { Model } from 'objection';
 
 const knex = require('./src/config/database');
@@ -28,6 +29,7 @@ class App {
 
   routes() {
     this.app.use('/profile', profileRoutes);
+    this.app.use('/user', userRoutes);
   }
 }
 

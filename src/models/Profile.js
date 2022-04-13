@@ -1,9 +1,7 @@
 import { Model } from "objection";
 
 class Profile extends Model {
-  static get tableName() {
-    return 'profiles';
-  }
+  static tableName = 'profiles';
 }
 
 module.exports = Profile;
