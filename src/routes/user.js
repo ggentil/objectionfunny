@@ -1,12 +1,15 @@
 import { Router } from "express";
+import { authorize } from '../middlewares/Authorize';
 import userController from "../controllers/UserController";
 
 const router = new Router();
 
-// router.get('/', profileController.getAll);
-router.get('/:id', userController.get);
-// router.post('/', profileController.create);
-// router.put('/:id', profileController.update);
-// router.delete('/:id', profileController.delete);
+router.get('/', authorize, userController.getAll);
+router.get('/:id', authorize, userController.get);
+// router.post('/', authorize, userController.create);
+// router.put('/:id', authorize, userController.update);
+router.post('/', userController.create);
+router.put('/:id', userController.update);
+router.delete('/:id', authorize, userController.delete);
 
 export default router;
