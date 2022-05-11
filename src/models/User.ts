@@ -2,11 +2,10 @@ import { Model, RelationMappings } from "objection";
 import { Role } from './Role';
 import { Profile } from './Profile';
 
-export class User extends Model {
+class User extends Model {
   static tableName: string = 'users';
-  id: number;
 
-  relationMappings: RelationMappings = {
+  static relationMappings: RelationMappings = {
     roles: {
       relation: Model.ManyToManyRelation,
       modelClass: Role,
@@ -28,6 +27,6 @@ export class User extends Model {
       }
     }
   }
-
-
 }
+
+export { User };

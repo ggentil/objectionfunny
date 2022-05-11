@@ -1,4 +1,4 @@
-import Profile from '../models/Profile';
+import { Profile } from '../models/Profile';
 
 class ProfileController {
   async create(req, res) {

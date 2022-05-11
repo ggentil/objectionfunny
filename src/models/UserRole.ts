@@ -1,11 +1,11 @@
-import { Model } from "objection";
-import Role from './Role';
-import User from './User';
+import { Model, RelationMappings } from "objection";
+import { Role } from './Role';
+import { User } from './User';
 
 class UserRole extends Model {
-  static tableName = 'users_roles';
+  static tableName: string = 'users_roles';
 
-  static relationMappings = {
+  static relationMappings: RelationMappings = {
     role: {
       relation: Model.BelongsToOneRelation,
       modelClass: Role,

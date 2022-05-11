@@ -1,5 +1,5 @@
 import { User } from '../models/User';
-import { crypto } from 'crypto';
+import * as crypto from 'crypto';
 
 class UserController {
   async create(req, res) {

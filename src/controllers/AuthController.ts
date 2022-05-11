@@ -8,8 +8,8 @@ class AuthController {
     if(req.body?.email != null && req.body?.password != null){
       const password = crypto.createHash('sha256').update(req.body?.password).digest('hex');
       const user: User[] = await User.query()
-                    .where('email', req.body?.email)
-                    .where('password', password)+-
+                                .where('email', req.body?.email)
+                                .where('password', password);
 
       if(user?.length > 0){
         const id = user[0].id;
