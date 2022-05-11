@@ -1,4 +1,4 @@
-import User from '../models/User';
+import { User } from '../models/User';
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import 'dotenv/config';
@@ -7,9 +7,9 @@ class AuthController {
   async login (req, res) {
     if(req.body?.email != null && req.body?.password != null){
       const password = crypto.createHash('sha256').update(req.body?.password).digest('hex');
-      const user = await User.query()
+      const user: User[] = await User.query()
                     .where('email', req.body?.email)
-                    .where('password', password);
+                    .where('password', password)+-
 
       if(user?.length > 0){
         const id = user[0].id;
@@ -26,4 +26,4 @@ class AuthController {
   }
 }
 
-export default new AuthController();
+export default new AuthController()

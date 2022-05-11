@@ -1,11 +1,12 @@
-import { Model } from "objection";
-import Role from './Role';
-import Profile from './Profile';
+import { Model, RelationMappings } from "objection";
+import { Role } from './Role';
+import { Profile } from './Profile';
 
-class User extends Model {
-  static tableName = 'users';
+export class User extends Model {
+  static tableName: string = 'users';
+  id: number;
 
-  static relationMappings = {
+  relationMappings: RelationMappings = {
     roles: {
       relation: Model.ManyToManyRelation,
       modelClass: Role,
@@ -27,6 +28,6 @@ class User extends Model {
       }
     }
   }
-}
 
-module.exports = User;
+
+}
