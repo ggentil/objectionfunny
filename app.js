@@ -5,6 +5,7 @@ import express from 'express';
 import profileRoutes from './src/routes/profile';
 import userRoutes from './src/routes/user';
 import authRoutes from './src/routes/auth';
+import taskRoutes from './src/routes/task';
 import { Model } from 'objection';
 
 const knex = require('./src/config/database');
@@ -32,6 +33,7 @@ class App {
     this.app.use('/profile', profileRoutes);
     this.app.use('/user', userRoutes);
     this.app.use('/auth', authRoutes);
+    this.app.use('/task', taskRoutes);
   }
 }
 
