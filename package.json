@@ -1,6 +1,6 @@
 {
   "name": "nodeknex",
-  "version": "0.2.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,12 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vscode/sqlite3": "^5.0.8",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "jsonwebtoken": "^8.5.1",
     "knex": "^1.0.5",
-    "knex-migrate": "^1.7.4",
     "objection": "^3.0.1",
     "pg": "^8.7.3"
   },
